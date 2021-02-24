@@ -77,31 +77,32 @@ function printJourney(){
         
     
     if(origin.line == 'intersection' || destination.line == 'intersection'){
+
         if (destination.line != 'intersection'){
             if (destination.stationIndex() > destination.line.indexOf('Richmond')){
-                for (let i = destination.line.indexOf('Richmond'); i <= destination.stationIndex(); i++){
+                for (let i = 0; i <= destination.stationIndex()-destination.line.indexOf('Richmond'); i++){
                     setTimeout(function(){
-                        drawOnLineOne(destination.line[destination.line.indexOf('Richmond') - 1 + i]);  
+                        drawOnLineOne(destination.line[destination.line.indexOf('Richmond') + i]);
                     }, (i + 1) * defaultTime)
                 }
             } else{
-                for (let i = destination.stationIndex(); i <= destination.line.indexOf('Richmond'); i++){
+                for (let i = 0; i <= destination.line.indexOf('Richmond') - destination.stationIndex(); i++){
                     setTimeout(function(){
                         drawOnLineOne(destination.line[destination.line.indexOf('Richmond') - i]);  
                     }, (i + 1) * defaultTime)
                 }
             }
         } else if(origin.line != 'intersection'){
-            if (origin.stationIndex() < origin.line.indexOf('Richmond')){
-                for (let i = origin.line.indexOf('Richmond'); i <= origin.stationIndex(); i++){
+            if (origin.stationIndex() > origin.line.indexOf('Richmond')){
+                for (let i = 0; i <= origin.stationIndex() - origin.line.indexOf('Richmond'); i++){
                     setTimeout(function(){
-                        drawOnLineOne(origin.line[origin.line.indexOf('Richmond') - 1 + i]);  
+                        drawOnLineOne(origin.line[origin.stationIndex() - i]);  
                     }, (i + 1) * defaultTime)
                 }
             } else{
-                for (let i = origin.stationIndex(); i <= origin.line.indexOf('Richmond'); i++){
+                for (let i = 0; i <= origin.line.indexOf('Richmond') - origin.stationIndex(); i++){
                     setTimeout(function(){
-                        drawOnLineOne(origin.line[origin.line.indexOf('Richmond') - i]);  
+                        drawOnLineOne(origin.line[origin.stationIndex() + i]);  
                     }, (i + 1) * defaultTime)
                 }
             }
