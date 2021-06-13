@@ -3,16 +3,19 @@
 *{
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
 
 body{
-    width: 90%;
-    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
     background: white;
 }
 
 .app{
-  margin-top: 20%;
+  position: relative;
 }
 
 img{
@@ -36,9 +39,9 @@ h2 span{
 }
 
 .menu{
-    height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    transition: all 200ms ease;
 }
 
 .selected-origin, .selected-destination{
@@ -135,7 +138,7 @@ h2 span{
 
 
 .station-obj{
-    color: rgb(21, 255, 21);
+    color: rgb(19, 184, 19);
     display: flex;
     width: fit-content;
     padding: 20px;
@@ -144,7 +147,7 @@ h2 span{
     background: none;
     justify-content: center;
     align-items: center;
-    border:rgb(21, 255, 21) 10px double;
+    border: gray 10px double;
     border-right: none;
     border-left: none;
     animation: slide-in-right 1.5s cubic-bezier(0.175, 0.7, 0.1, 1) both;
@@ -160,7 +163,7 @@ h2 span{
   background: none;
   justify-content: center;
   align-items: center;
-  border:rgb(21, 255, 21) 5px double;
+  border:gray 5px double;
   border-top: none;
   border-bottom: none;
   animation: slide-in-right 1.5s cubic-bezier(0.175, 0.7, 0.1, 1) both;
